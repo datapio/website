@@ -1,4 +1,4 @@
-baseURL = "https://datap.io/"
+baseURL = "https://datapio.github.io/"
 languageCode = "en-us"
 title = "Datapio"
 theme = "kube"
