@@ -4,4 +4,21 @@ title = "Datapio"
 theme = "kube"
 
 [params]
+author = "Datapio Dev Team"
 twitter = "datapio"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    pre = "<i class='fas fa-rss-square'></i>"
+    url = "/blog/"
+    weight = -110
+
+  [[menu.main]]
+    name = "Getting Started"
+    post = "<span class='alert'>New!</span>"
+    pre = "<i class='fa fa-road'></i>"
+    url = "/docs/getting-started/"
+    weight = -100
