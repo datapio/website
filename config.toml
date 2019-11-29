@@ -1,0 +1,7 @@
+baseURL = "https://datap.io/"
+languageCode = "en-us"
+title = "Datapio"
+theme = "kube"
+
+[params]
+twitter = "datapio"

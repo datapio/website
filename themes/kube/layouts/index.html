@@ -1,0 +1,54 @@
+{{ define "title"}} {{ .Site.Title}} {{end}}
+{{ define "header"}} {{ partial "header" .}} {{end}}
+{{ define "main"}}
+
+<div id="main">
+  <div id="hero">
+    <h1>{{.Title}}</h1>
+    <p>{{.Description}}</p>
+  </div>
+  <div id="action-buttons">
+    <a class="button primary big" href="/docs/" onclick="_gaq.push(['_trackEvent', 'datapio', 'download']);">Documentation</a> <a class="button outline big" href="https://github.com/datapio" onclick="_gaq.push(['_trackEvent', 'datapio', 'github']);">View on Github</a>
+  </div>
+  <div id="kube-features">
+    <div class="row gutters">
+      <div class="col col-4 item">
+        <figure>
+          <img alt="Baseline" height="48" src="{{ "/img/kube/icon-baseline.png" | relURL }}" width="48">
+        </figure>
+        <h3>OpenCore</h3>
+        <p>Continuous Integration & Deployment platform.</p>
+      </div>
+      <div class="col col-4 item">
+        <figure>
+          <img alt="Typography" height="48" src="{{ "/img/kube/icon-typo.png" | relURL }}" width="48">
+        </figure>
+        <h3>MicroServices</h3>
+        <p>Automated micro-service infrastructure generation.</p>
+      </div>
+      <div class="col col-4 item">
+        <figure>
+          <img alt="Minimalism" height="48" src="{{ "/img/kube/icon-minimalism.png" | relURL }}" width="48">
+        </figure>
+        <h3>Pipelines</h3>
+        <p>Automated complex event processing infrastructure generation.</p>
+      </div>
+    </div>
+    <div class="row gutters">
+      <div class="col col-4 item">
+        <h4>Designed for Kubernetes</h4>
+        <p>Every component is designed to run on Kubernetes and exploits its full potential.</p>
+      </div>
+      <div class="col col-4 item">
+        <h4>Github Integration</h4>
+        <p>Fully integrated with classical Github workflow.</p>
+      </div>
+      <div class="col col-4 item">
+        <h4>OAuth2 & OpenID Connect</h4>
+        <p>Authenticate your users with your preferred Identity Provider.</p>
+    </div>
+  </div>
+</div>
+</div>
+{{ end }}
+{{ define "footer"}} {{ partial "footer" .}} {{end}}
