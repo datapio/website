@@ -2,7 +2,7 @@
 title = "Getting Started"
 description = "Quick introduction to Datapio"
 date = 2019-11-29T20:32:00+01:00
-weight = 20
+weight = 10
 draft = false
 bref = "Quick introduction to Datapio"
 toc = true

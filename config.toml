@@ -17,8 +17,7 @@ twitter = "datapio"
     weight = -110
 
   [[menu.main]]
-    name = "Getting Started"
-    post = "<span class='alert'>New!</span>"
-    pre = "<i class='fa fa-road'></i>"
-    url = "/docs/getting-started/"
+    name = "Documentation"
+    pre = "<i class='fa fa-info-circle'></i>"
+    url = "/docs/"
     weight = -100
