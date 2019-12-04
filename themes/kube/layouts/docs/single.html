@@ -7,9 +7,14 @@
       <p class="hero-lead">
            {{ .Params.bref | safeHTML }}.
       </p>
+    </div>
 
+    <div class="breadcrumbs">
+      {{ template "breadcrumb" dict "currentPage" .Page "id" .UniqueID }}
     </div> 
+
     <div id="kube-component" class="content">
+
     {{ partial "toc" .}}
 
     {{ .Content}}
@@ -20,4 +25,18 @@
     {{end }}
     </div>
     </div>
+{{ end }}
+
+{{ define "breadcrumb" }}
+  {{ if .currentPage.Parent }}
+    {{ template "breadcrumb" dict "currentPage" .currentPage.Parent }} /
+
+    {{ if eq .id .currentPage.UniqueID }}
+      <a>{{ .currentPage.Title }}</a>
+    {{ else }}
+      <a href="{{ .currentPage.URL }}">{{ .currentPage.Title }}</a>
+    {{ end }}
+  {{ else }}
+    <a href="/"><i class="fas fa-home"></i></a>
+  {{ end }}
 {{ end }}
