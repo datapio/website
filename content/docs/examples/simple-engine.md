@@ -28,3 +28,17 @@ module.exports = {
     }
 }
 ```
+
+### Kubernetes Resource
+
+```yaml
+apiVersion: datap.io/v1
+kind: Engine
+metadata:
+    name: simple-engine
+spec:
+    package: simple-engine
+    listen:
+     - datapio.incomming
+    emit: datapio.engines.simple
+```

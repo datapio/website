@@ -27,13 +27,44 @@ module.exports = {
             books: async (parent, args, context, info) => {
                 return await context.prisma.books(info)
             }
+        },
+        Mutation: {
+            addBook: async (parent, { author, title }, context, info) => {
+                return await context.prisma.createBook({ author, title }, info)
+            }
         }
     }),
 
     directives: async (state) => ({
-        dummy: async (next, source, args, context) => {
+        authenticated: async (next, source, args, context) => {
+            // ...
             return await next()
         }
     })
 }
+```
+
+### Kubernetes Resource
+
+```yaml
+apiVersion: datap.io/v1
+kind: MicroService
+metadata:
+    name: simple-microservice
+spec:
+    package: simple-microservice
+    storage: 5Go
+    datamodel: |
+        type Book {
+            author: String!
+            title: String!
+        }
+    apiSchema: |
+        directive @authenticated() on FIELD_DEFINITION
+        Query {
+            books: [Book!]!
+        }
+        Mutation {
+            addBook(author: String!, title: String!): Book! @authenticated
+        }
 ```
