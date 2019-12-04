@@ -46,7 +46,8 @@ module.exports = {
 
 ### Kubernetes Resource
 
-```yaml
+```
+---
 apiVersion: datap.io/v1
 kind: MicroService
 metadata:
@@ -61,9 +62,11 @@ spec:
         }
     apiSchema: |
         directive @authenticated() on FIELD_DEFINITION
+
         Query {
             books: [Book!]!
         }
+
         Mutation {
             addBook(author: String!, title: String!): Book! @authenticated
         }

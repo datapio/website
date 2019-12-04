@@ -31,7 +31,8 @@ module.exports = {
 
 ### Kubernetes Resource
 
-```yaml
+```
+---
 apiVersion: datap.io/v1
 kind: Engine
 metadata:
