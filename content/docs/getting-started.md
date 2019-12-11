@@ -10,79 +10,70 @@ toc = true
 
 ### Introduction
 
-Datapio is composed of 3 main features:
+Datapio is a framework used to automate 80% of the generic use cases you may
+encounter in the life cycle of your project, and configure the remaining 20%. It
+abstracts common actions in a fully automated process, such as:
 
- - **OpenCore**: providing a Continuous Integration & Deplooyment platform
- - **MicroServices**: providing a micro-service generation tool
- - **Pipelines**: providing a Complex Event Processing pipeline generation tool
+ - continuous integration and deployment of your business code
+ - automated generation of the infrastructure used to run your business code
+ - multi-environment support based on your preferred Git flow
 
-### What is OpenCore ?
+### Datapio OpenCore
 
-By plugging your Github repository to a Datapio project, you are able to deploy automatically your artifacts to your project environments.
+Designed for Kubernetes, *Datapio OpenCore* provides a wide set of pre-configured
+technologies to help you alleviate the workload needed to get your application up
+and running:
 
-The `datapio.yml` file, that lies at the root of your repository, declares which branch is bound to which environment, as well as all the
-provided artifacts that must be deployed in that environment.
+ - **Consul** & **Vault**: for secret storage
+ - **Vault Kubernetes Engine**: for secret injection into your pods and deployments
+ - **Cert Manager** & **Vault PKI Engine**: for automated certificate generation for your ingresses
+ - **TektonCD**: for automated pipelines execution and management
+ - **Nexus**: for internal artifact storage
 
-The following kind of artifacts are currently supported:
+### Datapio MicroService
 
- - NPM package
- - Docker image
- - Helm chart
+Built on top of *Datapio OpenCore*, the *MicroService* feature provides you the
+ability to ship only the business code implementing the logic of your service.
+Let *Datapio* take care of:
 
-*Datapio OpenCore* is based on the following third-party technologies:
+ - boilerplate code generation
+ - secret injection into your business code
+ - infrastructure automated deployment, containing:
+    - a **PostgreSQL** database
+    - a **Prisma** exposing the database to your business code via a *GraphQL* API
+    - an **API** service, running your business code
+ - exposition through HTTPS, behind an **OAuth2** proxy, handling for you the authentication process
 
- - each pipeline is implemented with [TektonCD](https://tekton.dev/)
- - each artifact will be pushed to an internal [Nexus](https://sonatype.com/nexus-repository-oss)
- - secrets are managed with [Vault](https://www.vaultproject.io/)
- - global configuration is stored in [Consul](https://www.consul.io/)
- - certificate generation is done with [Cert Manager](https://cert-manager.io/) through the [Vault PKI Engine](https://www.vaultproject.io/docs/secrets/pki/index.html)
+### Datapio Pipelines
 
-Each project has its own *Kubernetes namespace* where a webhook is deployed upon project's creation. This webhook will trigger the correct pipeline in that namespace.
-Every project's environment has its own namespace as well, where *Helm* charts will be deployed.
+Also built on top of *Datapio OpenCore*, the *Pipelines* feature brings complex
+event processing to your projects. Relying on **RabbitMQ**, *Datapio* provides
+you 2 resources:
 
-### What is MicroServices ?
+ - Engine:
+    - listen for one or more routing keys on the exchange ``datapio.engines``
+    - process received messages using your business code
+    - emit results with a single routing key on the exchange ``datapio.engines``
+ - Router:
+    - listen for one or more routing keys on the exchange ``datapio.engines``
+    - try to match the received message against a set of filters
+    - emit the message on the routing key of the first matching filter
 
-In Datapio, a micro-service is defined by:
+Just like the *MicroService* feature, the following is automatically taken care
+of:
 
- - a data model
- - an API schema
- - business code implementing the business logic of the service
- - which other APIs it consumes
+ - boilerplate code generation
+ - secret injection into your business code
+ - infrastructure automated deployment, containing:
+    - **RabbitMQ** exchanges and queues
+    - **Engine** consumers, running your business code
+    - **Router** consumers
 
-Such a definition is done with a custom *Kubernetes* resource `MicroService`. The creation of such a resource will trigger build and deployment pipelines to
-automatically deploys the infrastructure needed by the service, such as:
+Engines and routers can be chained to create pipelines that are fed messages via
+an HTTPS endpoint, publishing messages on the exchange ``datapio.engines`` with
+the routing key ``datapio.incomming``.
 
- - a [PostgreSQL]() database
- - a [Prisma]() exposing the database through a [GraphQL]() API, and syncing the datamodel with the database
- - an endpoint serving the *GraphQL* API schema, integrating the business code
- - a certificate authenticating the service
+### What's next ?
 
-Secrets needed for the infrastructure are automatically generated, stored in the *Vault* and injected into the business code.
-
-*NB:* Custom secrets can be added to the *Vault* and will be injected into the business code.
-
-An *API Gateway* is provided to expose your micro-services to the rest of your cluster, allowing:
-
- - rate limiting and quota management
- - [OAuth2]() & [OpenID Connect]() encapsulation
-
-### What is Pipelines ?
-
-In Datapio, Complex Event Processing is done through a pipeline of engines, each consuming messages from [RabbitMQ]().
-
-An engine is defined by:
-
- - a set of routing keys to listen for
- - the routing key emitted by the engine
- - business code implementing the business logic of the service
- - which APIs it consumes
-
-Such a definition is done with a custom *Kubernetes* resource `Engine`. The creation of such a resource will trigger build and deployment pipelines to
-automatically deploys the infrastructure needed by the enngine, such as:
-
- - the *RabbitMQ* exchanges and queues
- - a daemon consuming the *RabbitMQ* queue, processing the message with the integrated business code, and producing a message to the *RabbitMQ* exchange
-
-Secrets needed for the infrastructure are automatically generated, stored in the *Vault* and injected into the business code.
-
-*NB:* Custom secrets can be added to the *Vault* and will be injected into the business code.
+Feel free to dive deep into the documentation to learn more about the architectural
+design of Datapio, or read the tutorials on how to use it.
