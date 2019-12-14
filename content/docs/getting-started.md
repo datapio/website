@@ -18,17 +18,20 @@ abstracts common actions in a fully automated process, such as:
  - automated generation of the infrastructure used to run your business code
  - multi-environment support based on your preferred Git flow
 
+To cover the most use cases, Datapio is divided in 3 features: *OpenCore*,
+*MicroService* and *Pipelines*.
+
 ### Datapio OpenCore
 
 Designed for Kubernetes, *Datapio OpenCore* provides a wide set of pre-configured
 technologies to help you alleviate the workload needed to get your application up
 and running:
 
- - **Consul** & **Vault**: for secret storage
- - **Vault Kubernetes Engine**: for secret injection into your pods and deployments
- - **Cert Manager** & **Vault PKI Engine**: for automated certificate generation for your ingresses
- - **TektonCD**: for automated pipelines execution and management
- - **Nexus**: for internal artifact storage
+ - **[Consul](https://consul.io)** & **[Vault](https://vaultproject.io)**: for secret storage
+ - **[Vault Kubernetes Engine](https://www.vaultproject.io/docs/secrets/pki/index.html)**: for secret injection into your pods and deployments
+ - **[Cert Manager](https://cert-manager.io)** & **[Vault PKI Engine](https://www.vaultproject.io/docs/secrets/pki/index.html)**: for automated certificate generation for your ingresses
+ - **[TektonCD](https://tekton.dev)**: for automated pipelines execution and management
+ - **[Nexus](https://fr.sonatype.com/nexus-repository-oss)**: for internal artifact storage
 
 ### Datapio MicroService
 
@@ -39,16 +42,16 @@ Let *Datapio* take care of:
  - boilerplate code generation
  - secret injection into your business code
  - infrastructure automated deployment, containing:
-    - a **PostgreSQL** database
-    - a **Prisma** exposing the database to your business code via a *GraphQL* API
+    - a **[PostgreSQL](https://www.postgresql.org/)** database
+    - a **[Prisma](https://prisma.io)** exposing the database to your business code via a *GraphQL* API
     - an **API** service, running your business code
  - exposition through HTTPS, behind an **OAuth2** proxy, handling for you the authentication process
 
 ### Datapio Pipelines
 
 Also built on top of *Datapio OpenCore*, the *Pipelines* feature brings complex
-event processing to your projects. Relying on **RabbitMQ**, *Datapio* provides
-you 2 resources:
+event processing to your projects. Relying on **[RabbitMQ](https://rabbitmq.com)**,
+*Datapio Pipelines* provides you 2 resources:
 
  - Engine:
     - listen for one or more routing keys on the exchange ``datapio.engines``

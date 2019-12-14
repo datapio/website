@@ -1,5 +1,5 @@
 +++
-title = "OpenCore Architecture"
+title = "OpenCore Specification"
 description = "Full technical specification"
 date = 2019-12-03T21:33:04+01:00
 weight = 30
