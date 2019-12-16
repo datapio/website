@@ -12,6 +12,8 @@ markup = "mmark"
 {.message .focus}
 ### DatapioFile
 
+> **Note:** Must be called `datapio.yml` and located at the root of the repository.
+
 {.bordered .striped}
 | Field | Type | Description |
 | ----- | ---- | ----------- |
