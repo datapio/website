@@ -39,7 +39,7 @@ markup = "mmark"
 | features | [ProjectFeature](#projectfeature) array | Features of Datapio for this project |
 
 {.message .focus}
-#### ProjectFeature
+##### ProjectFeature
 
 > Seen in:
 >  - [ProjectSpec](#projectspec)
@@ -91,7 +91,7 @@ markup = "mmark"
 | artifacts | [ArtifactSpec](#artifactspec) array | Artifacts to deploy |
 
 {.message .focus}
-#### ArtifactSpec
+##### ArtifactSpec
 
 > Seen in:
 >  - [ReleaseSpec](#releasespec)
@@ -117,7 +117,7 @@ markup = "mmark"
 | artifacts | [ArtifactStatus](#artifactstatus) array | Stauts of each artifact's deployment |
 
 {.message .focus}
-#### ArtifactStatus
+##### ArtifactStatus
 
 > Seen in:
 >  - [ReleaseStatus](#releasestatus)
@@ -130,7 +130,7 @@ markup = "mmark"
 | state | [ArtifactDeploymentState](#artifactdeploymentstate) | Current state of artifact(s deployment) |
 
 {.message .focus}
-#### ArtifactDeploymentState
+###### ArtifactDeploymentState
 
 > Seen in:
 >  - [ArtifactStatus](#releasespec)
