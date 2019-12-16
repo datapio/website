@@ -42,7 +42,7 @@ markup = "mmark"
 | name | string | Artifact's name |
 | type | [ArtifactType](#artifacttype) | Artifact's type |
 | path | string | Path to artifact in repository |
-| params | map | Mapping of keys to values (may be injected from [Consul](https://consul.io/) or [Vault](https://vaultproject.io)), will be injected into business code |
+| params | map | Mapping of keys to values (may be injected from [Consul](https://consul.io/) or [Vault](https://vaultproject.io)), will be injected into deployment pipeline |
 | requires | [ArtifactRef](#artifactref) array | Requirements for deployment |
 
 {.message .focus}
