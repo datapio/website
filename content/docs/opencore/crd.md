@@ -2,7 +2,7 @@
 title = "Custom Resource Definitions"
 description = "Kubernetes resources describing desired infrastructure"
 date = 2019-12-04T11:18:11+01:00
-weight = 20
+weight = 30
 draft = false
 bref = "Kubernetes resources describing desired infrastructure"
 toc = true
