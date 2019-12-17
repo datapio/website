@@ -31,7 +31,7 @@ and running:
  - **[Vault Kubernetes Engine](https://www.vaultproject.io/docs/secrets/pki/index.html)**: for secret injection into your pods and deployments
  - **[Cert Manager](https://cert-manager.io)** & **[Vault PKI Engine](https://www.vaultproject.io/docs/secrets/pki/index.html)**: for automated certificate generation for your ingresses
  - **[TektonCD](https://tekton.dev)**: for automated pipelines execution and management
- - **[Nexus](https://fr.sonatype.com/nexus-repository-oss)**: for internal artifact storage
+ - **[Nexus](https://sonatype.com/nexus-repository-oss)**: for internal artifact storage
 
 ### Datapio MicroService
 
