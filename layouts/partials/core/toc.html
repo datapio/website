@@ -1,0 +1,13 @@
+{{ if and (isset .Params "toc") .Params.toc }}
+  <div class="column is-one-fifth">
+    <aside class="panel is-full-height">
+      <div class="panel-block sticky">
+        <div class="menu ml-3 mr-3 pt-5">
+          <p class="menu-label has-text-centered">Table of Content</p>
+
+          <ol id="toc" class="menu-list"></ol>
+        </div>
+      </div>
+    </aside>
+  </div>
+{{ end }}

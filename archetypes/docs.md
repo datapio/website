@@ -1,9 +1,7 @@
-+++
-title = ""
-description = ""
-date = {{ .Date }}
-weight = 20
-draft = false
-bref = ""
-toc = true
-+++
+---
+title: "{{ replace .Name "-" " " | title }}"
+abstract: ""
+seeAlso: []
+toc: yes
+wip: true
+---

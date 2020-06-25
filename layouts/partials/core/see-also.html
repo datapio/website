@@ -1,0 +1,11 @@
+<div class="menu">
+  <p class="menu-label">See also</p>
+
+  <ul class="menu-list">
+    {{ range .Params.seeAlso }}
+      {{ with $.Site.GetPage . }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</div>

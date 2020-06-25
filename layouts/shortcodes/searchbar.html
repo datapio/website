@@ -1,0 +1,16 @@
+{{ with $.Site.GetPage "/docs" }}
+  <h1 class="title has-text-centered">Search</h1>
+
+  <form method="get" url="{{ .Permalink }}" class="mt-6 mb-6">
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input class="input" name="query" type="search" placeholder="I am attempting to fill a silent moment with non-relevant conversation." />
+      </div>
+      <div class="control">
+        <a class="button is-info">
+          <span class="icon cil-search"></span>
+        </a>
+      </div>
+    </div>
+  </form>
+{{ end }}

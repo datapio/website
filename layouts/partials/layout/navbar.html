@@ -1,0 +1,47 @@
+<nav class="navbar is-info is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/media/datapio-logo-light.png" alt="datapio" />
+    </a>
+  </div>
+
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <p class="navbar-item">|</p>
+
+      {{ range .Site.Params.Menu }}
+        {{ with $.Site.GetPage .uri }}
+          <a class="navbar-item" href="{{ .Permalink }}">
+            {{ .Title }}
+          </a>
+        {{ else }}
+          <a class="navbar-item" href="{{ .uri }}">
+            {{ .name }}
+          </a>
+        {{ end }}
+      {{ end }}
+    </div>
+
+    <div class="navbar-end">
+      {{ if ne .RelPermalink "/search/" }}
+        {{ with $.Site.GetPage "/search" }}
+          <form method="get" action="{{ .Permalink }}">
+            <div class="navbar-item field">
+              <p class="control has-icons-right">
+                <input class="input is-info has-background-info-dark has-text-white" name="search" type="search" placeholder="Search..." />
+                <span class="icon is-small is-right cil-search"></span>
+              </p>
+            </div>
+          </form>
+        {{ end }}
+      {{ end }}
+
+      <a class="navbar-item" href="/tags/">
+        <span class="icon cil-tag"></span>
+      </a>
+      <a class="navbar-item" href="{{ .Site.Params.github }}">
+        <img src="/media/github-logo.png" alt="Github" width="24" height="24" />
+      </a>
+    </div>
+  </div>
+</nav>

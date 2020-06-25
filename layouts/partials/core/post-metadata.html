@@ -1,0 +1,9 @@
+{{ if and (isset .Params "post") .Params.post }}
+  <p class="has-text-grey is-italic">Published on {{ dateFormat .Site.Params.dateFormat .Params.date }}</p>
+
+  <p class="is-size-7 mt-3 mb-3">
+    This article is released under the term of the
+    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>
+    license.
+  </p>
+{{ end }}

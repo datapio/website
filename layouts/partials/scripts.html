@@ -1,0 +1,28 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="/js/jquery.tagcloud.js"></script>
+
+<script type="application/javascript">
+  $(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('print')) {
+        window.print()
+        window.onafterprint = window.close
+    }
+  })
+</script>
+
+{{ if and (isset .Params "toc") .Params.toc }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
+
+  <script type="text/javascript">
+    $(() => {
+      tocbot.init({
+        tocSelector: '#toc',
+        contentSelector: '#document',
+        headingSelector: 'h1, h2, h3, h4, h5, h6',
+        orderedList: true
+      })
+    })
+  </script>
+{{ end }}

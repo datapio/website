@@ -1,0 +1,27 @@
+{{ $param := .Get 0 }}
+{{ $cards := index .Page.Params $param }}
+
+<div class="columns">
+  {{ range $cards }}
+    <div class="column">
+      <div class="panel is-full-height">
+        <div class="panel-heading">
+          <div class="level">
+            <div class="level-left">
+              <img src="/{{ .icon }}" alt="" width="48" height="48" />
+            </div>
+            <div class="level-item">
+              {{ .name }}
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-block">
+          <div class="content has-text-centered" style="margin: auto;">
+            {{ $.Page.RenderString .abstract }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {{ end }}
+</div>

@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <div class="container">
+    <div class="columns">
+      <div class="column is-three-quarters">
+        {{ partial "layout/heading.html" . }}
+        {{ partial "layout/content.html" . }}
+      </div>
+
+      <nav class="column is-one-quarter pt-6">
+        {{ range .Pages }}
+          {{ partial "core/page-card.html" . }}
+        {{ end }}
+      </nav>
+    </div>
+  </div>
+{{ end }}

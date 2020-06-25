@@ -1,0 +1,6 @@
+{{ if and (isset .Params "wip") .Params.wip }}
+  <div class="notification is-danger is-light has-text-centered">
+    <span class="icon cil-warning"></span>
+    This page is related to <b>experimental</b> features that are not yet released and/or stable.
+  </div>
+{{ end }}

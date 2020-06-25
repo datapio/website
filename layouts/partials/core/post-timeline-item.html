@@ -1,0 +1,14 @@
+<div class="timeline-item">
+  {{ if isset .Params "icon" }}
+    <div class="timeline-marker is-icon">
+      <span class="icon cil-{{ .Params.icon }}"></span>
+    </div>
+  {{ else }}
+    <div class="timeline-marker"></div>
+  {{ end }}
+
+  <div class="timeline-content">
+    <p class="heading">{{ dateFormat .Site.Params.dateFormat .Params.date }}</p>
+    <p><a href="{{ .Permalink }}">{{ .Params.title }}</a></p>
+  </div>
+</div>

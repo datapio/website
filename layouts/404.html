@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <div class="columns">
+    <div class="column">
+      <div class="has-text-centered mt-6 mb-6">
+        <h1 class="title is-1 has-text-danger">404 - Not Found</h1>
+        <p class="has-text-danger">
+          <span class="icon cil-warning"></span>
+          The requested page (<code>{{ .RelPermalink }}</code>) does not exist or has been deleted.
+        </p>
+      </div>
+    </div>
+  </div>
+{{ end }}

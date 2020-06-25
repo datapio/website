@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <div class="container">
+    {{ partial "layout/heading.html" . }}
+    {{ partial "layout/content.html" . }}
+
+    <div class="columns is-centered is-multiline">
+      {{ range .Pages }}
+        <div class="column is-one-quarter">
+          {{ partial "core/page-card.html" . }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

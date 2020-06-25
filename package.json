@@ -1,0 +1,14 @@
+{
+  "name": "@datapio/website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "elasticlunr": "^0.9.5",
+    "glob": "^7.1.6",
+    "gray-matter": "^4.0.2"
+  },
+  "scripts": {
+    "index": "hugo-lunr -i \"content/docs/**\" -o \"static/search-index.json\""
+  }
+}

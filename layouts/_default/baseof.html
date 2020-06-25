@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+  <head>
+    {{ partial "metadata.html" . }}
+    {{ partial "css.html" . }}
+    {{ partial "scripts.html" . }}
+
+    {{ block "scripts" . }}
+    {{ end }}
+  </head>
+
+  <body>
+    {{ partial "layout/navbar.html" . }}
+
+    <main class="main">
+      <div class="columns">
+        {{ partial "core/toc.html" . }}
+
+        <div class="column">
+          {{ block "main" . }}
+          {{ end }}
+        </div>
+      </div>
+    </main>
+
+    {{ partial "layout/footer.html" . }}
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{{ $title := .Get 0 }}
+{{ $is_image := .Get 1 | default "no" }}
+
+<div class="hero mb-6">
+  <div class="hero-body">
+    <div class="container has-text-centered pt-5">
+      {{ if eq $is_image "yes" }}
+        <img src="{{ $title }}" width="{{ .Get 2 }}" />
+      {{ else }}
+        <h1 class="title">{{ $title }}</h1>
+      {{ end }}
+
+      <div class="buttons is-centered mt-6">
+        <a class="button is-danger" disabled>Free Demo</a>
+        <a class="button is-primary" disabled>Marketplace</a>
+      </div>
+    </div>
+  </div>
+</div>

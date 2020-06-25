@@ -1,22 +1,28 @@
 baseURL = "https://datapio.co/"
 languageCode = "en-us"
 title = "Datapio"
-theme = "kube"
+staticDir = ["static"]
 
 [params]
-author = "Datapio Dev Team"
 
-[menu]
+dateFormat = "Monday, January 2, 2006"
+github = "https://github.com/datapio/"
+talkyardServerUrl = "https://comments-for-datapio-co.talkyard.net"
+talkyardScriptUrl = "https://c1.ty-cdn.net/-/talkyard-comments.min.js"
 
-  [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    pre = "<i class='fas fa-rss-square'></i>"
-    url = "/blog/"
-    weight = -110
+[[params.menu]]
 
-  [[menu.main]]
-    name = "Documentation"
-    pre = "<i class='fa fa-info-circle'></i>"
-    url = "/docs/"
-    weight = -100
+uri = "/news"
+
+[[params.menu]]
+
+uri = "https://comments-for-datapio-co.talkyard.net"
+name = "Forum"
+
+[[params.menu]]
+
+uri = "/docs"
+
+[[params.menu]]
+
+uri = "/about"

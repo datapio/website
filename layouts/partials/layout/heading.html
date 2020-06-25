@@ -1,0 +1,13 @@
+<div class="container pt-5">
+  <h1 class="title has-text-centered">
+    {{ if and (isset .Params "post") .Params.post }}
+      <span class="icon cil-newspaper"></span>
+    {{ end }}
+    {{ .Title }}
+  </h1>
+
+  {{ partial "core/breadcrumb" . }}
+  {{ partial "core/wip" . }}
+
+  <hr />
+</div>

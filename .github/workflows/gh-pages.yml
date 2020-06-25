@@ -13,6 +13,16 @@ jobs:
         # with:
         #   submodules: true
 
+      - name: Install dependencies
+        uses: borales/actions-yarn@2.0.0
+        with:
+          cmd: install
+
+      - name: Build index
+        uses: borales/actions-yarn@2.0.0
+        with:
+          cmd: run index
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -22,13 +32,12 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Configure CNAME
-        run: cp ./CNAME ./public/CNAME
-
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v2.5.0
+        uses: peaceiris/actions-gh-pages@v3
         env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.WEBSITE_DEPLOY_KEY }}
-          EXTERNAL_REPOSITORY: datapio/datapio.github.io
-          PUBLISH_BRANCH: master
-          PUBLISH_DIR: ./public
+          deploy_key: ${{ secrets.WEBSITE_DEPLOY_KEY }}
+          external_repository: datapio/datapio.github.io
+          publish_branch: master
+          publish_dir: ./public
+          cname: datapio.co
+          allow_empty_commit: true
