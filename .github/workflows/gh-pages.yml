@@ -34,7 +34,7 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        env:
+        with:
           deploy_key: ${{ secrets.WEBSITE_DEPLOY_KEY }}
           external_repository: datapio/datapio.github.io
           publish_branch: master
