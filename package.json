@@ -9,6 +9,6 @@
     "gray-matter": "^4.0.2"
   },
   "scripts": {
-    "index": "hugo-lunr -i \"content/docs/**\" -o \"static/search-index.json\""
+    "index": "node assets/build-lunr-index.js"
   }
 }
