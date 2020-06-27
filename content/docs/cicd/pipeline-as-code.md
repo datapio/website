@@ -72,7 +72,7 @@ Using the pipeline's tools, you can create an environment that will be passed to
 ```javascript
 pipeline({
   // ...
-  environment: async ({ git }) => ({
+  environment: async (workspace_pvc, { git }) => ({
     platform: ({ master: 'prod', dev: 'preprod' })[git.branch()] || null,
     docker_image_name: 'example/webservice',
     docker_image_tag: git.commit().sha
@@ -80,6 +80,9 @@ pipeline({
   // ...
 })
 ```
+
+The `workspace_pvc` contains the name of the `PersitentVolumeClaim` allocated for the current workspace.
+It is especially useful when running a *Tekton* `Task` that needs to live in the current workspace.
 
 **NB:** This function can return anything, no typing enforced.
 
