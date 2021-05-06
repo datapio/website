@@ -1,4 +1,5 @@
 ---
+weight: 4
 title: Cloud Infrastructure
 abstract: |
   Get your managed Kubernetes cluster, pre-provisionned with

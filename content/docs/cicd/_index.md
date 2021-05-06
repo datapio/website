@@ -1,9 +1,11 @@
 ---
+weight: 3
 title: "Continuous Integration and Deployment"
 abstract: |
   Get started with pipelines as code to setup easy, flexible
   and reusable automation.
 toc: yes
+wip: yes
 ---
 
 ### Overview
@@ -67,7 +69,7 @@ First, the **PipelineRunServer Operator**:
 | `worker.image.tag` | Docker image version |
 | `worker.image.pullPolicy` | Kubernetes Pull Policy for image |
 | `rabbitmq.url_secret` | Name of Kubernetes Secret containing a key `url` |
-| `rabbitmq.admin_secret` | Name of Kubernetes Secret containing the keys `protocol`, `host`, `port`, `username`, `password`, and `vhost` 
+| `rabbitmq.admin_secret` | Name of Kubernetes Secret containing the keys `protocol`, `host`, `port`, `username`, `password`, and `vhost`
 
 *See default values [here](https://github.com/datapio/opencore/blob/feature/refactor/charts/pipelinerunserver-operator/values.yaml)*
 
