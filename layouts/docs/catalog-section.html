@@ -6,7 +6,7 @@
     <div class="columns is-multiline is-centered mt-6">
       {{ range .Pages }}
         <div class="column is-one-third">
-          {{ partial "core/page-card.html" . }}
+          {{ partial "core/page-card.html" (dict "context" . "fullheight" true) }}
         </div>
       {{ end }}
     </div>

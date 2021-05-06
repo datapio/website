@@ -8,7 +8,7 @@
 
       <nav class="column is-one-quarter pt-6">
         {{ range .Pages }}
-          {{ partial "core/page-card.html" . }}
+          {{ partial "core/page-card.html" (dict "context" . "fullheight" false) }}
         {{ end }}
       </nav>
     </div>

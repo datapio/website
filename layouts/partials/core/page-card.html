@@ -1,18 +1,20 @@
-<div class="panel">
+<div class="panel is-flex is-flex-direction-column" {{ if .fullheight }}style="height: 100%;"{{ end }}>
   <div class="panel-heading">
-    <p class="has-text-centered">{{ .Title }}</p>
+    <p class="has-text-centered">{{ .context.Title }}</p>
   </div>
-  <div class="panel-block" style="margin: auto;">
-    <div class="content mt-3 mb-3 has-text-centered" style="margin: auto;">
-      {{ .RenderString .Params.abstract }}
+  <div class="panel-block" style="flex: auto;">
+    <div class="container">
+      <div class="content mt-3 mb-3 has-text-centered">
+        {{ .context.RenderString .context.Params.abstract }}
+      </div>
     </div>
   </div>
-  <div class="panel-block card-footer" style="margin-top: auto;">
-    <a href="{{ .Permalink }}" class="card-footer-item">
+  <div class="panel-block card-footer">
+    <a href="{{ .context.RelPermalink }}" class="card-footer-item">
       <span class="icon cil-book"></span>
       Read
     </a>
-    <a target="_blank" href="{{ .Permalink }}?print=1" class="card-footer-item">
+    <a target="_blank" href="{{ .context.RelPermalink }}?print=1" class="card-footer-item">
       <span class="icon cil-print"></span>
       Print
     </a>
