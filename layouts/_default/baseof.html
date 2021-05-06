@@ -16,10 +16,17 @@
       <div class="columns">
         {{ partial "core/toc.html" . }}
 
-        <div class="column">
-          {{ block "main" . }}
-          {{ end }}
-        </div>
+        {{ if and (isset .Params "toc") .Params.toc }}
+          <div class="column is-four-fifths pr-6">
+            {{ block "main" . }}
+            {{ end }}
+          </div>
+        {{ else }}
+          <div class="column">
+            {{ block "main" . }}
+            {{ end }}
+          </div>
+        {{ end }}
       </div>
     </main>
 
