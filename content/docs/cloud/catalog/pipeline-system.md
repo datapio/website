@@ -3,6 +3,11 @@ title: Pipeline System
 abstract: |
   Start automating your workflow by adding the basic CI/CD
   building blocks to your cluster.
+tags:
+  - cloud
+  - service
+  - pipeline
+  - workflow
 wip: yes
 ---
 

@@ -5,6 +5,11 @@ abstract: |
 seeAlso:
   - /docs/cicd/manage-projects
   - /docs/cicd/pipeline-scheduling-model
+tags:
+  - cloud
+  - service
+  - opencore
+  - cicd
 wip: yes
 ---
 

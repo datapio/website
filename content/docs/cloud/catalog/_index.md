@@ -4,6 +4,9 @@ title: Catalog
 abstract: |
   Provision your cluster with Ansible roles and Helm charts,
   with a full integration to our marketplace.
+tags:
+  - cloud
+  - catalog
 wip: yes
 ---
 

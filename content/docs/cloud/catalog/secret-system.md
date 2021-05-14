@@ -2,6 +2,11 @@
 title: Secret System
 abstract: |
   Enhance your cluster's security with TLS certificate and secret management.
+tags:
+  - cloud
+  - service
+  - secret-management
+  - certificate
 wip: yes
 ---
 

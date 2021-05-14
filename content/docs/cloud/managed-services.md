@@ -6,6 +6,10 @@ abstract: |
   other services.
 seeAlso:
   - /docs/cloud/catalog
+tags:
+  - cloud
+  - service
+  - managed
 toc: yes
 wip: yes
 ---

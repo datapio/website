@@ -2,6 +2,12 @@
 title: Ingress System
 abstract: |
   Provides Ingress management capabalities to your cluster.
+tags:
+  - cloud
+  - service
+  - ingress
+  - network
+  - routing
 wip: yes
 ---
 

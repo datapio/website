@@ -3,6 +3,10 @@ title: Managed Kubernetes
 abstract: |
   Learn more about how to setup and provision
   your dedicated cluster.
+tags:
+  - cloud
+  - kubernetes
+  - managed
 toc: yes
 wip: true
 ---

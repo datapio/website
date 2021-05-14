@@ -3,6 +3,10 @@ title: Database System
 abstract: |
   Add the ability to provision managed databases and handle
   backups.
+tags:
+  - cloud
+  - service
+  - database
 wip: yes
 ---
 

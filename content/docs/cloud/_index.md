@@ -5,6 +5,8 @@ abstract: |
   Get your managed Kubernetes cluster, pre-provisionned with
   **Datapio**, or use the SaaS solution. Read more about our
   cloud products.
+tags:
+  - cloud
 wip: yes
 ---
 

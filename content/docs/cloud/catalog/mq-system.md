@@ -2,6 +2,11 @@
 title: Messaging System
 abstract: |
   Integrate common Message Bus techonologies in your cluster.
+tags:
+  - cloud
+  - service
+  - event-sourcing
+  - messaging
 wip: yes
 ---
 

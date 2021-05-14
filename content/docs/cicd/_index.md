@@ -4,6 +4,9 @@ title: "Continuous Integration and Deployment"
 abstract: |
   Get started with pipelines as code to setup easy, flexible
   and reusable automation.
+tags:
+  - opencore
+  - cicd
 toc: yes
 wip: yes
 ---
@@ -71,7 +74,7 @@ First, the **PipelineRunServer Operator**:
 | `rabbitmq.url_secret` | Name of Kubernetes Secret containing a key `url` |
 | `rabbitmq.admin_secret` | Name of Kubernetes Secret containing the keys `protocol`, `host`, `port`, `username`, `password`, and `vhost`
 
-*See default values [here](https://github.com/datapio/opencore/blob/feature/refactor/charts/pipelinerunserver-operator/values.yaml)*
+*See default values [here](https://github.com/datapio/opencore/blob/master/charts/pipelinerunserver-operator/values.yaml)*
 
 Then, the **Project Operator**:
 
@@ -95,4 +98,4 @@ Then, the **Project Operator**:
 | `sidecars.docker.image.tag` | Docker image version |
 | `vault_secret` | Name of Kubernetes Secret containing the keys `VAULT_ADDR`, `VAULT_ROLE` and `VAULT_K8S_MOUNT_POINT` |
 
-*See default values [here](https://github.com/datapio/opencore/blob/feature/refactor/charts/project-operator/values.yaml)*
+*See default values [here](https://github.com/datapio/opencore/blob/master/charts/project-operator/values.yaml)*
