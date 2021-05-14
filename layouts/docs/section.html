@@ -7,6 +7,11 @@
       </div>
 
       <nav class="column is-one-quarter pt-6">
+        {{ partial "core/tag-list.html" . }}
+        {{ partial "core/see-also.html" . }}
+
+        <hr/>
+
         {{ range .Pages }}
           {{ partial "core/page-card.html" (dict "context" . "fullheight" false) }}
         {{ end }}

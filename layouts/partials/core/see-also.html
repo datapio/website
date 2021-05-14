@@ -1,11 +1,15 @@
-<div class="menu">
-  <p class="menu-label">See also</p>
+{{ if .Params.seeAlso }}
+  {{ if gt (len .Params.seeAlso) 0 }}
+    <div class="menu">
+      <p class="menu-label">See also</p>
 
-  <ul class="menu-list">
-    {{ range .Params.seeAlso }}
-      {{ with $.Site.GetPage . }}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-      {{ end }}
-    {{ end }}
-  </ul>
-</div>
+      <ul class="menu-list">
+        {{ range .Params.seeAlso }}
+          {{ with $.Site.GetPage . }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+{{ end }}
