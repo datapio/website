@@ -13,6 +13,7 @@ const idx = lunr(function() {
   self.setRef('uri')
   self.addField('title')
   self.addField('abstract')
+  self.addField('tags')
   self.addField('seeAlso')
   self.addField('content')
 
