@@ -4,32 +4,13 @@
     {{ partial "metadata.html" . }}
     {{ partial "css.html" . }}
     {{ partial "scripts.html" . }}
-
-    {{ block "scripts" . }}
-    {{ end }}
   </head>
 
   <body>
-    {{ partial "layout/navbar.html" . }}
+    {{ block "main" . }}
+    {{ end }}
 
-    <main class="main">
-      <div class="columns">
-        {{ partial "core/toc.html" . }}
-
-        {{ if and (isset .Params "toc") .Params.toc }}
-          <div class="column is-four-fifths pr-6">
-            {{ block "main" . }}
-            {{ end }}
-          </div>
-        {{ else }}
-          <div class="column">
-            {{ block "main" . }}
-            {{ end }}
-          </div>
-        {{ end }}
-      </div>
-    </main>
-
-    {{ partial "layout/footer.html" . }}
+    {{ block "scripts" . }}
+    {{ end }}
   </body>
 </html>

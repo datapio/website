@@ -1,7 +1,0 @@
-{{ if eq .Parent.Title "Home" }}
-  <li><a href="/"><span class="icon cil-home"></span></a></li>
-{{ else }}
-  {{ partial "core/breadcrumb-items.html" .Parent }}
-{{ end }}
-
-<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>

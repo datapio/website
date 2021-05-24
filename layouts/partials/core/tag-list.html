@@ -1,9 +1,0 @@
-{{ if and (isset .Params "tags") .Params.tags }}
-  <p class="is-size-6 mt-3 mb-3">
-    {{ range .Params.tags }}
-      <a class="tag is-primary is-light" href="/tags/{{ . }}">
-        {{ . }}
-      </a>
-    {{ end }}
-  </p>
-{{ end }}
