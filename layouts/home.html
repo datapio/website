@@ -1,0 +1,89 @@
+{{ define "main" }}
+  <section class="hero is-medium">
+    <div class="hero-body">
+      <div class="container">
+        <p class="title has-text-centered">
+          <img id="datapio-logo" src="{{ .Site.Params.Logo }}" alt="{{ .Site.Title }}" />
+        </p>
+        <p class="subtitle has-text-centered has-text-weight-semibold">{{ .Params.LandingSubtitle }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-6">
+    <h1 class="title is-size-2 has-text-centered">
+      &#128230; Components
+    </h1>
+    <hr />
+
+    <div class="columns is-centered is-multiline">
+      {{ range .Params.Components }}
+        <div class="column is-one-third px-5 py-5">
+          <div class="panel is-flex is-flex-direction-column is-full-height">
+            <a href="{{ .url }}" class="panel-heading">
+              <div class="container">
+                <div class="content">
+                  <p class="title has-text-centered">
+                    {{ .name | safeHTML }}
+                  </p>
+                </div>
+              </div>
+            </a>
+            {{ if .wip }}
+              <div class="panel-block">
+                <div class="container has-text-centered">
+                  <span class="tag is-danger">
+                    &#127959;&#65039; Work in Progress
+                  </span>
+                </div>
+              </div>
+            {{ end }}
+            <div class="panel-block">
+              <div class="container py-5">
+                <div class="content">
+                  <p class="subtitle has-text-centered">
+                    {{ .description | markdownify }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="container my-6">
+    <h1 class="title is-size-2 has-text-centered">
+      &#9881;&#65039; Tools
+    </h1>
+    <hr />
+
+    <div class="columns is-centered is-multiline">
+      {{ range .Params.Tools }}
+        <div class="column is-one-third px-5 py-5">
+          <div class="panel is-flex is-flex-direction-column is-full-height">
+            <a href="{{ .url }}" class="panel-heading">
+              <div class="container">
+                <div class="content">
+                  <p class="title has-text-centered">
+                    {{ .name | safeHTML }}
+                  </p>
+                </div>
+              </div>
+            </a>
+            <div class="panel-block">
+              <div class="container py-5">
+                <div class="content">
+                  <p class="subtitle has-text-centered">
+                    {{ .description | markdownify }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

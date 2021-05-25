@@ -6,6 +6,12 @@
   type="application/javascript"
   src="https://code.jquery.com/jquery-3.6.0.min.js"
 ></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+  integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
 
 <script type="application/javascript">
   $(() => {
@@ -14,5 +20,34 @@
       window.print()
       window.onafterprint = window.close
     }
+  })
+</script>
+
+<script type="application/javascript">
+  const isLogoVisible = () => {
+    const el = $('#datapio-logo')
+
+    if (el.length > 0) {
+      const pos = el[0].getBoundingClientRect()
+      return pos.top < window.innerHeight && pos.bottom >= 0
+    }
+
+    return false
+  }
+
+  const toggleNavbarLogo = () => {
+    const el = $('#datapio-brand')
+
+    if (isLogoVisible()) {
+      el.addClass('is-brand-hidden')
+    }
+    else {
+      el.removeClass('is-brand-hidden')
+    }
+  }
+
+  $(() => {
+    toggleNavbarLogo()
+    $(window).scroll(toggleNavbarLogo)
   })
 </script>

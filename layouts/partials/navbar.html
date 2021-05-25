@@ -1,0 +1,29 @@
+<nav class="navbar is-light is-fixed-top is-hidden-print">
+  <div class="container">
+    <div class="navbar-brand">
+      <a id="datapio-brand" href="/" class="navbar-item is-size-4 has-text-weight-semibold is-brand-hidden">
+        <img src="{{ .Site.Params.Logo }}" alt="Datapio" />
+      </a>
+      <span class="navbar-burger" data-target="datapio-nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+
+    <div class="navbar-menu" id="datapio-nav-menu">
+      <div class="navbar-end">
+        <a href="{{ .Site.Params.Forum }}" class="navbar-item">Forum</a>
+        <a href="/news/" class="navbar-item">News Feed</a>
+        <span class="navbar-item">
+          <a href="{{ .Site.Params.Github }}" class="button is-inverted">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+            <span>View on Github</span>
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</nav>
