@@ -24,7 +24,7 @@ wip = true
 [[components]]
 
 name = "Pipelines <i class=\"fas fa-project-diagram\"></i>"
-url = "https://usvc.datapio.co/"
+url = "https://pipelines.datapio.co/"
 description = """
 Complex Event Processing infrastructure generation based on **Kubirds** and
 [KubeVela](https://kubevela.io).
