@@ -1,28 +1,16 @@
 baseURL = "https://datapio.co/"
 languageCode = "en-us"
-title = "Datapio"
 staticDir = ["static"]
+
+title = "Datapio"
 
 [params]
 
-dateFormat = "Monday, January 2, 2006"
-github = "https://github.com/datapio/"
-talkyardServerUrl = "https://comments-for-datapio-co.talkyard.net"
-talkyardScriptUrl = "https://c1.ty-cdn.net/-/talkyard-comments.min.js"
+logo = "/img/datapio-logo.png"
+description = """
+Datapio is an ecosystem of Cloud-Native tools for DevOps, to ease the use and
+workflows of Kubernetes.
+"""
 
-[[params.menu]]
-
-uri = "/news"
-
-[[params.menu]]
-
-uri = "https://comments-for-datapio-co.talkyard.net"
-name = "Forum"
-
-[[params.menu]]
-
-uri = "/docs"
-
-[[params.menu]]
-
-uri = "/about"
+github = "https://github.com/datapio"
+forum = "https://comments-for-datapio-co.talkyard.net"
