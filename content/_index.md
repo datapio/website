@@ -26,8 +26,8 @@ wip = true
 name = "Pipelines <i class=\"fas fa-project-diagram\"></i>"
 url = "https://pipelines.datapio.co/"
 description = """
-Complex Event Processing infrastructure generation based on **Kubirds** and
-[KubeVela](https://kubevela.io).
+Complex Event Processing infrastructure generation based on
+[Kubirds](https://kubirds.com) and [KubeVela](https://kubevela.io).
 """
 wip = true
 
