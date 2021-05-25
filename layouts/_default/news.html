@@ -1,0 +1,28 @@
+{{ define "main" }}
+  <div class="container">
+    <h1 class="title is-size-2 has-text-centered">
+      &#128240; {{ .Title }}
+    </h1>
+    <hr />
+
+    <div class="timeline">
+      <header class="timeline-header">
+        <span class="tag is-medium is-link">Today</span>
+      </header>
+
+      <div
+        id="articles"
+        data-authors="{{ .Params.authors | jsonify }}"
+        data-categories="{{ .Params.categories | jsonify }}"
+      ></div>
+
+      <footer class="timeline-header">
+        <span class="tag is-medium is-link">Birth of Datapio</span>
+      </footer>
+    </div>
+  </div>
+{{ end }}
+
+{{ define "scripts" }}
+  <script type="application/javascript" src="/js/news-feed.js"></script>
+{{ end }}
