@@ -34,7 +34,7 @@ const fetch_articles = async (authors, categories) => {
 
 const render_articles = (articles, div) => {
   for (const article of articles) {
-    const column = $('<div/>', { class: 'column is-one-third' })
+    const column = $('<div/>', { class: 'column is-one-quarter' })
     const card = $('<div/>', { class: 'card is-full-height is-flex is-flex-direction-column' }).append(
       $('<div/>', { class: 'card-image' }).append(
         $('<figure/>', { class: 'image' }).append(
@@ -43,10 +43,10 @@ const render_articles = (articles, div) => {
       ),
       $('<div/>', { class: 'card-content' }).append(
         $('<div/>', { class: 'content' }).append(
-          $('<p/>', { class: 'title' }).append(
+          $('<p/>', { class: 'title is-size-4' }).append(
             $('<a/>', { text: article.title, href: article.link, target: '_blank' })
           ),
-          $('<p/>', { class: 'subtitle', text: `@${article.author}` })
+          $('<p/>', { class: 'subtitle is-size-6', text: `@${article.author}` })
         )
       ),
       $('<div/>', { class: 'card-footer', style: 'margin-top: auto;' }).append(
@@ -57,7 +57,7 @@ const render_articles = (articles, div) => {
             )
           ),
           $('<p/>', {
-            class: 'has-text-right mt-3',
+            class: 'is-size-7 is-uppercase has-text-grey has-text-weight-semibold has-text-right mt-3',
             text: moment(article.pubDate).format('dddd, MMMM Do, YYYY')
           })
         )
