@@ -34,17 +34,38 @@ const fetch_articles = async (authors, categories) => {
 
 const render_articles = (articles, div) => {
   for (const article of articles) {
-    const item = $('<div/>', { class: 'timeline-item' })
-    const marker = $('<div/>', { class: 'timeline-marker' })
-    const content = $('<div/>', { class: 'timeline-content' })
-    const heading = $('<p/>', { class: 'heading', text: moment(article.pubDate).format('dddd, MMMM Do, YYYY') })
-    const description = $('<a/>', { text: article.title, href: article.link, target: '_blank' })
+    const column = $('<div/>', { class: 'column is-one-third' })
+    const card = $('<div/>', { class: 'card is-full-height is-flex is-flex-direction-column' }).append(
+      $('<div/>', { class: 'card-image' }).append(
+        $('<figure/>', { class: 'image' }).append(
+          $('<img/>', { src: article.thumbnail, alt: 'Thumbnail' })
+        )
+      ),
+      $('<div/>', { class: 'card-content' }).append(
+        $('<div/>', { class: 'content' }).append(
+          $('<p/>', { class: 'title' }).append(
+            $('<a/>', { text: article.title, href: article.link, target: '_blank' })
+          ),
+          $('<p/>', { class: 'subtitle', text: `@${article.author}` })
+        )
+      ),
+      $('<div/>', { class: 'card-footer', style: 'margin-top: auto;' }).append(
+        $('<div/>', { class: 'container p-3' }).append(
+          $('<p/>', { class: 'has-text-centered' }).append(
+            ...article.categories.map(category =>
+              $('<span/>', { class: 'tag is-primary mx-1', text: category })
+            )
+          ),
+          $('<p/>', {
+            class: 'has-text-right mt-3',
+            text: moment(article.pubDate).format('dddd, MMMM Do, YYYY')
+          })
+        )
+      )
+    )
 
-    content.append(heading)
-    content.append(description)
-    item.append(marker)
-    item.append(content)
-    div.append(item)
+    column.append(card)
+    div.append(column)
   }
 }
 

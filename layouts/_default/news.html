@@ -5,21 +5,13 @@
     </h1>
     <hr />
 
-    <div class="timeline">
-      <header class="timeline-header">
-        <span class="tag is-medium is-link">Today</span>
-      </header>
+    <div
+      class="columns is-multiline"
 
-      <div
-        id="articles"
-        data-authors="{{ .Params.authors | jsonify }}"
-        data-categories="{{ .Params.categories | jsonify }}"
-      ></div>
-
-      <footer class="timeline-header">
-        <span class="tag is-medium is-link">Birth of Datapio</span>
-      </footer>
-    </div>
+      id="articles"
+      data-authors="{{ .Params.authors | jsonify }}"
+      data-categories="{{ .Params.categories | jsonify }}"
+    ></div>
   </div>
 {{ end }}
 
