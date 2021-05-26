@@ -29,6 +29,7 @@
                 </div>
               </div>
             </a>
+
             {{ if .wip }}
               <div class="panel-block">
                 <div class="container has-text-centered">
@@ -38,11 +39,21 @@
                 </div>
               </div>
             {{ end }}
-            <div class="panel-block">
+            <div class="panel-block" style="border-bottom: 0;">
               <div class="container py-5">
                 <div class="content">
                   <p class="subtitle has-text-centered">
                     {{ .description | markdownify }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-block" style="margin-top: auto;">
+              <div class="container">
+                <div class="content">
+                  <p class="has-text-right">
+                    <a href="{{ .url }}">Read more</a>
                   </p>
                 </div>
               </div>
@@ -72,11 +83,20 @@
                 </div>
               </div>
             </a>
-            <div class="panel-block">
+            <div class="panel-block" style="border-bottom: 0;">
               <div class="container py-5">
                 <div class="content">
                   <p class="subtitle has-text-centered">
                     {{ .description | markdownify }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="panel-block" style="margin-top: auto;">
+              <div class="container">
+                <div class="content">
+                  <p class="has-text-right">
+                    <a href="{{ .url }}">Read more</a>
                   </p>
                 </div>
               </div>
